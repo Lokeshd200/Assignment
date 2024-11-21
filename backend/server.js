@@ -14,7 +14,7 @@ app.use(express.json());
 
 
 // Initialize SQLite database
-const db = new sqlite3.Database("./tasks.db", (err) => {
+const db = new sqlite3.Database(process.env.DATABASE_PATH, (err) => {
   if (err) {
     console.error("Error connecting to SQLite database:", err.message);
   } else {
